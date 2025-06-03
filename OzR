@@ -1,0 +1,131 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(OzResearchApp());
+}
+
+class OzResearchApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'OzResearch Prototype',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('OzResearch')),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            ElevatedButton(
+              child: Text('Login / Register'),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => LoginRegisterPage()),
+              ),
+            ),
+            ElevatedButton(
+              child: Text('My Profile'),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => MyProfilePage()),
+              ),
+            ),
+            ElevatedButton(
+              child: Text('Author Dashboard'),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => AuthorDashboard()),
+              ),
+            ),
+            ElevatedButton(
+              child: Text('Reviewer Dashboard'),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => ReviewerDashboard()),
+              ),
+            ),
+            ElevatedButton(
+              child: Text('Editor Dashboard'),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => EditorDashboard()),
+              ),
+            ),
+            ElevatedButton(
+              child: Text('Plagiarism Checker'),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => PlagiarismChecker()),
+              ),
+            ),
+            ElevatedButton(
+              child: Text('Analytics'),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => AnalyticsPage()),
+              ),
+            ),
+            ElevatedButton(
+              child: Text('Admin Panel'),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => AdminPanel()),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// Placeholder screens
+class LoginRegisterPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => Scaffold(appBar: AppBar(title: Text('Login / Register')));
+}
+
+class MyProfilePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => Scaffold(appBar: AppBar(title: Text('My Profile')));
+}
+
+class AuthorDashboard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => Scaffold(appBar: AppBar(title: Text('Author Dashboard')));
+}
+
+class ReviewerDashboard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => Scaffold(appBar: AppBar(title: Text('Reviewer Dashboard')));
+}
+
+class EditorDashboard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => Scaffold(appBar: AppBar(title: Text('Editor Dashboard')));
+}
+
+class PlagiarismChecker extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => Scaffold(appBar: AppBar(title: Text('Plagiarism Checker')));
+}
+
+class AnalyticsPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => Scaffold(appBar: AppBar(title: Text('Analytics')));
+}
+
+class AdminPanel extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => Scaffold(appBar: AppBar(title: Text('Admin Panel')));
+}
